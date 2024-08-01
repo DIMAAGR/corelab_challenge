@@ -26,10 +26,14 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/svg/
+    - assets/svg/icons/
+    - assets/svg/images/
 
   fonts:
     - family: Circular Std
       fonts:
         - asset: assets/fonts/circular-medium.ttf
           weight: 500
+    - family: Dm Sans
+      fonts:
+        - asset: assets/fonts/dm-sans.ttf
