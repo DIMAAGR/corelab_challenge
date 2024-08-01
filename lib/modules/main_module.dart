@@ -1,3 +1,4 @@
+import 'package:corelab_challenge/modules/categories/categories_module.dart';
 import 'package:corelab_challenge/modules/dashboard/dashboard_module.dart';
 import 'package:corelab_challenge/modules/search/search_module.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -16,8 +17,20 @@ class MainModule extends Module {
 
   @override
   void routes(RouteManager r) {
-    r.module('/', module: DashboardModule());
-    r.module('/search/', module: SearchModule());
-    r.module('/categories/', module: DashboardModule());
+    r.module(
+      '/',
+      module: DashboardModule(),
+      transition: TransitionType.noTransition,
+    );
+    r.module(
+      '/search/',
+      module: SearchModule(),
+      transition: TransitionType.noTransition,
+    );
+    r.module(
+      '/categories/',
+      module: CategoriesModule(),
+      transition: TransitionType.noTransition,
+    );
   }
 }

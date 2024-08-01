@@ -13,6 +13,7 @@ dependencies:
 
   flutter:
     sdk: flutter
+  flutter_svg: ^2.0.10+1
 
 
 dev_dependencies:
@@ -23,3 +24,12 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/svg/
+
+  fonts:
+    - family: Circular Std
+      fonts:
+        - asset: assets/fonts/circular-medium.ttf
+          weight: 500
