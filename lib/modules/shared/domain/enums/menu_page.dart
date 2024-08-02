@@ -3,7 +3,8 @@ enum MenuPage {
   categories('/categories/'),
   announce('/announce/'),
   favorites('/favorites/'),
-  account('/account/');
+  account('/account/'),
+  none('');
 
   final String _path;
 

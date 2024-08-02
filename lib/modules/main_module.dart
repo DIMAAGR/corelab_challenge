@@ -1,5 +1,6 @@
 import 'package:corelab_challenge/modules/categories/categories_module.dart';
 import 'package:corelab_challenge/modules/dashboard/dashboard_module.dart';
+import 'package:corelab_challenge/modules/not_found/pages/not_found_page.dart';
 import 'package:corelab_challenge/modules/search/search_module.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
@@ -30,6 +31,13 @@ class MainModule extends Module {
     r.module(
       '/categories/',
       module: CategoriesModule(),
+      transition: TransitionType.noTransition,
+    );
+
+    
+    /// When some error occourred, the modular throw this page.
+    r.wildcard(
+      child: (_) => const NotFoundPage(),
       transition: TransitionType.noTransition,
     );
   }
