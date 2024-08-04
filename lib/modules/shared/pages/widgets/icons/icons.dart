@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:corelab_challenge/modules/shared/pages/styles/colors.dart';
 import 'package:corelab_challenge/modules/shared/pages/widgets/icons/icons_data.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +16,8 @@ class AppIcon extends StatelessWidget {
     return SvgPicture.asset(
       icon.toString(),
       color: color ?? AppColors.primary,
+      // The correct approach would be to use SvgTheme... IF IT WORKED PROPERLY, AT LEAST.
+      // theme: SvgTheme(currentColor: color ?? AppColors.primary), (DOESN'T WORK AS WELL)
       height: size,
       width: size,
     );

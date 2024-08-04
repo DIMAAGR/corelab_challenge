@@ -19,4 +19,22 @@ class AppTextStyle {
         fontSize: 14,
         color: AppColors.deepSpaceSparkle,
       );
+  static TextStyle get category => const TextStyle(
+        fontFamily: 'Dm Sans',
+        fontWeight: FontWeight.w400,
+        fontSize: 16,
+        color: AppColors.primary,
+      );
+  static TextStyle get historic => const TextStyle(
+        fontFamily: 'Dm Sans',
+        fontWeight: FontWeight.w400,
+        fontSize: 16,
+        color: AppColors.grey,
+      );
+  static TextStyle get appbar => const TextStyle(
+        fontFamily: 'Dm Sans',
+        fontWeight: FontWeight.w400,
+        fontSize: 20,
+        color: AppColors.richBlack,
+      );
 }
