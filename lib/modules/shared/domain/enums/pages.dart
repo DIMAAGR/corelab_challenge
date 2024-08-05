@@ -1,4 +1,4 @@
-enum MenuPage {
+enum Pages {
   dashboard('/'),
   categories('/categories/'),
   announce('/announce/'),
@@ -8,7 +8,7 @@ enum MenuPage {
 
   final String _path;
 
-  const MenuPage(this._path);
+  const Pages(this._path);
   @override
   String toString() => _path;
 }
