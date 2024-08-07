@@ -46,7 +46,6 @@ class _SearchPageState extends State<SearchPage> {
             if (loading.isLoading || loading.isIdle) {
               return const Center(child: CircularProgressIndicator());
             } else if (loading.isError) {
-              print('ERROR');
               return const NotFoundMessage();
             } else {
               return ValueListenableBuilder(
