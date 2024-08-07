@@ -7,6 +7,7 @@ class AppIconData {
   static final AppIconData favorites = AppIconData._('assets/svg/icons/ic-favorites.svg');
   static final AppIconData home = AppIconData._('assets/svg/icons/ic-home.svg');
   static final AppIconData user = AppIconData._('assets/svg/icons/ic-user.svg');
+  static final AppIconData search = AppIconData._('assets/svg/icons/ic-search.svg');
 
   @override
   String toString() => _path;

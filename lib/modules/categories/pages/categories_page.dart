@@ -3,7 +3,7 @@ import 'package:corelab_challenge/modules/shared/pages/styles/text_styles.dart';
 import 'package:corelab_challenge/modules/shared/pages/widgets/connection_unavailable_message.dart';
 import 'package:flutter/material.dart';
 
-import '../../shared/domain/enums/menu_page.dart';
+import '../../shared/domain/enums/pages.dart';
 import '../../shared/pages/widgets/inferior_menu.dart';
 import 'controllers/categories_controller.dart';
 import 'widgets/category_list_builder.dart';
@@ -21,7 +21,7 @@ class CategoriesPage extends StatelessWidget {
     final bodyHeight = screenHeight - appBarHeight - bottomBarHeight;
 
     return Scaffold(
-      bottomNavigationBar: const InferiorMenu(page: MenuPage.categories),
+      bottomNavigationBar: const InferiorMenu(page: Pages.categories),
       appBar: AppBar(
         title: Text('Categorias', style: AppTextStyle.appbar),
         backgroundColor: AppColors.background,

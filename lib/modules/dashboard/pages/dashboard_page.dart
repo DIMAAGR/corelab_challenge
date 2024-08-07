@@ -1,7 +1,9 @@
 import 'package:corelab_challenge/modules/dashboard/pages/controllers/dashboard_controller.dart';
-import 'package:corelab_challenge/modules/shared/domain/enums/menu_page.dart';
+import 'package:corelab_challenge/modules/shared/domain/enums/pages.dart';
 import 'package:corelab_challenge/modules/shared/pages/widgets/inferior_menu.dart';
+import 'package:corelab_challenge/modules/shared/pages/widgets/search/searcher_app_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class DashboardPage extends StatelessWidget {
   final DashboardController controller;
@@ -9,9 +11,11 @@ class DashboardPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(child: Text('DASHBOARD')),
-      bottomNavigationBar: InferiorMenu(page: MenuPage.dashboard),
+    return  Scaffold(
+      appBar:  SearcherAppBar(controller: Modular.get()),
+     // body: const Center(child: Text('DASHBOARD')),
+      bottomNavigationBar: const InferiorMenu(page: Pages.dashboard),
+      
     );
   }
 }

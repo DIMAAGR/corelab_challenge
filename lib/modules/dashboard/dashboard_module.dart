@@ -2,7 +2,12 @@ import 'package:corelab_challenge/modules/dashboard/pages/controllers/dashboard_
 import 'package:corelab_challenge/modules/dashboard/pages/dashboard_page.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
+import '../main_module.dart';
+
 class DashboardModule extends Module {
+  @override
+  List<Module> get imports => [MainModule()];
+
   void _controller(Injector i) {
     i.addLazySingleton(DashboardController.new);
   }

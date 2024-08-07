@@ -8,6 +8,8 @@ abstract class AppColors {
   static const Color aliceBlue = Color(0xFFEBF1F4);
   static const Color richBlack = Color(0xFF002429);
   static const Color deepSpaceSparkle = Color(0xFF4A6569);
+  static const Color cadetGrey = Color(0xFF94A6A9);
+  static const Color opal = Color(0xFFADBBBF);
 
   static const Color shadowColor1 = Color(0x2694A6A9);
 }

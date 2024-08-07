@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-import '../../domain/enums/menu_page.dart';
+import '../../domain/enums/pages.dart';
 import '../styles/colors.dart';
 import '../styles/text_styles.dart';
 import 'icons/icons.dart';
 import 'icons/icons_data.dart';
 
 class InferiorMenu extends StatelessWidget {
-  final MenuPage page;
+  final Pages page;
 
   const InferiorMenu({
     super.key,
     required this.page,
   });
 
-  void _pushNamedAndRemoveUntilTo(MenuPage page) {
+  void _pushNamedAndRemoveUntilTo(Pages page) {
     Modular.to.pushNamedAndRemoveUntil(
       page.toString(),
       (_) => false,
@@ -43,39 +43,39 @@ class InferiorMenu extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         mainAxisSize: MainAxisSize.min,
         children: [
-          _MenuPageButton(
+          _PagesButton(
             onTap: _pushNamedAndRemoveUntilTo,
             title: 'Home',
             actualPage: page,
-            page: MenuPage.dashboard,
+            page: Pages.dashboard,
             icon: AppIconData.home,
           ),
-          _MenuPageButton(
+          _PagesButton(
             onTap: _pushNamedAndRemoveUntilTo,
             title: 'Categorias',
             actualPage: page,
-            page: MenuPage.categories,
+            page: Pages.categories,
             icon: AppIconData.categories,
           ),
-          _MenuPageButton(
+          _PagesButton(
             onTap: _pushNamedAndRemoveUntilTo,
             title: 'Anunciar',
             actualPage: page,
-            page: MenuPage.announce,
+            page: Pages.announce,
             icon: AppIconData.add,
           ),
-          _MenuPageButton(
+          _PagesButton(
             onTap: _pushNamedAndRemoveUntilTo,
             title: 'Favoritos',
             actualPage: page,
-            page: MenuPage.favorites,
+            page: Pages.favorites,
             icon: AppIconData.favorites,
           ),
-          _MenuPageButton(
+          _PagesButton(
             onTap: _pushNamedAndRemoveUntilTo,
             title: 'Conta',
             actualPage: page,
-            page: MenuPage.account,
+            page: Pages.account,
             icon: AppIconData.user,
           ),
         ],
@@ -84,14 +84,14 @@ class InferiorMenu extends StatelessWidget {
   }
 }
 
-class _MenuPageButton extends StatelessWidget {
-  final void Function(MenuPage) onTap;
+class _PagesButton extends StatelessWidget {
+  final void Function(Pages) onTap;
   final String title;
   final AppIconData icon;
-  final MenuPage actualPage;
-  final MenuPage page;
+  final Pages actualPage;
+  final Pages page;
 
-  const _MenuPageButton({
+  const _PagesButton({
     required this.onTap,
     required this.title,
     required this.icon,
