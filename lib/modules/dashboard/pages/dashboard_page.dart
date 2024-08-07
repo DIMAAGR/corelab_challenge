@@ -48,7 +48,6 @@ class _DashboardPageState extends State<DashboardPage> {
                       ? const NotFoundMessage()
                       : Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisSize: MainAxisSize.min,
                           children: [
                             Padding(
                               padding: const EdgeInsets.only(
@@ -61,8 +60,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                 style: AppTextStyle.lastsAnnouncement,
                               ),
                             ),
-                            SizedBox(
-                              height: MediaQuery.of(context).size.height - 237,
+                            Expanded(
                               child: ListView.builder(
                                 itemCount: products.length,
                                 itemBuilder: (_, i) {
