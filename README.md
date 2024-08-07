@@ -42,3 +42,13 @@ Given that the only expected error return is a 500, there is no need to create a
 Clean architecture and clean code go far beyond using Uncle Bob's example architecture or even certain concepts that are often overlooked. I'm not the best in the world at this, nor did I write the best code in the world for this project, but some of my points align with it. Even though it’s clean architecture, it’s not necessarily clean. For a project’s architecture to be truly clean, it has to be created completely from scratch, considering the project itself, its current and future demands. But this also doesn’t mean that you shouldn't use Uncle Bob's example in some projects, as that will vary according to each project's needs.
 
 Another point is that some classes might have slightly long names, but I believe there’s nothing like sendTextToScreenAndSplitItByCommasToSearchForWords. Each class and method, even with slightly longer names, were sometimes designed to be very descriptive about what they’re doing, while trying to ensure that each one performs only a single action. One method is responsible for clearing the list, another for searching, another for displaying the error on the screen, striving to assign a single responsibility to each task. Additionally, there won’t be (or there will be very few) variables with names like ProductList. These variables, for example, have plural names because when I say products, I’m already indicating that it’s more than one, meaning a list.
+
+
+
+### Imagens
+![Screenshot](readme/images/1.png?raw=true)
+![Screenshot](readme/images/2.png?raw=true)
+![Screenshot](readme/images/3.png?raw=true)
+![Screenshot](readme/images/4.png?raw=true)
+![Screenshot](readme/images/5.png?raw=true)
+![Screenshot](readme/images/6.png?raw=true)

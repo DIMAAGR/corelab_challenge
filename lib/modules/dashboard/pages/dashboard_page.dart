@@ -8,6 +8,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 
 import '../../shared/pages/styles/colors.dart';
 import '../../shared/pages/styles/text_styles.dart';
+import '../../shared/pages/widgets/connection_unavailable_message.dart';
 import '../../shared/pages/widgets/not_found_message.dart';
 import '../../shared/pages/widgets/product_item.dart';
 
@@ -39,7 +40,7 @@ class _DashboardPageState extends State<DashboardPage> {
             if (loading.isLoading || loading.isIdle) {
               return const Center(child: CircularProgressIndicator());
             } else if (loading.isError) {
-              return const NotFoundMessage();
+              return const ConnectionUnavailableMessage();
             } else {
               return ValueListenableBuilder(
                 valueListenable: widget.controller.products,
