@@ -38,64 +38,54 @@ class _SearchPageState extends State<SearchPage> {
         },
       ),
       bottomNavigationBar: const InferiorMenu(page: Pages.dashboard),
-      body: SizedBox(
-        height: MediaQuery.of(context).size.height,
-        child: ValueListenableBuilder(
-          valueListenable: widget.controller.isLoading,
-          builder: (_, loading, __) {
-            if (loading.isLoading || loading.isIdle) {
-              return const Center(child: CircularProgressIndicator());
-            } else if (loading.isError) {
-              print('ERROR');
-              return const NotFoundMessage();
-            } else {
-              return ValueListenableBuilder(
-                valueListenable: widget.controller.products,
-                builder: (_, products, __) {
-                  return products.isEmpty
-                      ? NotFoundMessage(searchText: widget.controller.searchQuery)
-                      : Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                    bottom: 10,
-                                    left: 16,
-                                    top: 20,
-                                  ),
-                                  child: Text(
-                                    '${products.length} resultados encontrados',
-                                    style: AppTextStyle.productsLength,
-                                  ),
-                                ),
-                                const Divider(color: AppColors.aliceBlue, height: 0),
-                              ],
+      body: ValueListenableBuilder(
+        valueListenable: widget.controller.isLoading,
+        builder: (_, loading, __) {
+          if (loading.isLoading || loading.isIdle) {
+            return const Center(child: CircularProgressIndicator());
+          } else if (loading.isError) {
+            return const NotFoundMessage();
+          } else {
+            return ValueListenableBuilder(
+              valueListenable: widget.controller.products,
+              builder: (_, products, __) {
+                return products.isEmpty
+                    ? NotFoundMessage(searchText: widget.controller.searchQuery)
+                    : Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              bottom: 10,
+                              left: 16,
+                              top: 20,
                             ),
-                            SizedBox(
-                              height: MediaQuery.of(context).size.height - 228,
-                              child: ListView.builder(
-                                itemCount: products.length,
-                                itemBuilder: (_, i) {
-                                  return ProductItem(
-                                    condiction: products[i].condiction!.toString(),
-                                    imageURL: products[i].imageURL!,
-                                    title: products[i].title!,
-                                    discount: products[i].discount!,
-                                    price: products[i].price!,
-                                  );
-                                },
-                              ),
+                            child: Text(
+                              '${products.length} resultados encontrados',
+                              style: AppTextStyle.productsLength,
                             ),
-                          ],
-                        );
-                },
-              );
-            }
-          },
-        ),
+                          ),
+                          const Divider(color: AppColors.aliceBlue, height: 0),
+                          Expanded(
+                            child: ListView.builder(
+                              itemCount: products.length,
+                              itemBuilder: (_, i) {
+                                return ProductItem(
+                                  condiction: products[i].condiction!.toString(),
+                                  imageURL: products[i].imageURL!,
+                                  title: products[i].title!,
+                                  discount: products[i].discount!,
+                                  price: products[i].price!,
+                                );
+                              },
+                            ),
+                          ),
+                        ],
+                      );
+              },
+            );
+          }
+        },
       ),
     );
   }

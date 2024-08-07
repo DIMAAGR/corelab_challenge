@@ -94,10 +94,23 @@ class AppTextStyle {
         fontSize: 12,
         color: AppColors.grey,
       );
+
+  static TextStyle get day => const TextStyle(
+        fontFamily: 'Dm Sans',
+        fontWeight: FontWeight.w600,
+        fontSize: 13,
+        color: AppColors.grey,
+      );
   static TextStyle get productsLength => const TextStyle(
         fontFamily: 'Dm Sans',
         fontWeight: FontWeight.w600,
         fontSize: 14,
+        color: AppColors.richBlack,
+      );
+  static TextStyle get lastsAnnouncement => const TextStyle(
+        fontFamily: 'Dm Sans',
+        fontWeight: FontWeight.w600,
+        fontSize: 20,
         color: AppColors.richBlack,
       );
 

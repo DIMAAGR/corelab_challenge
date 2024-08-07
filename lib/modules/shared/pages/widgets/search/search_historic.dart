@@ -17,7 +17,7 @@ class SearchHistoric extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height,
+      height:  height - (MediaQuery.of(context).viewInsets.bottom - 50),
       width: MediaQuery.of(context).size.width,
       color: AppColors.background,
       child: SingleChildScrollView(
